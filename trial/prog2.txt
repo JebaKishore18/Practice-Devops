@@ -1,1 +1,2 @@
 this is prog 2
+adding this new line to learn about branches of git
