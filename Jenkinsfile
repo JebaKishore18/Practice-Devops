@@ -4,7 +4,7 @@ agent any
 stages{
     stage('Checkout')
       {
-      steps {https://github.com/JebaKishore18/Practice-Devops.git }
+      steps { git url: 'https://github.com/JebaKishore18/Practice-Devops.git' }
       }
     stage ('Publish'){
       steps {
