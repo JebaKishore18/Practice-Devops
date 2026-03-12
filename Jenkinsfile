@@ -1,23 +1,26 @@
-pipeline 
-{
-agent any
-stages{
-    stage('Checkout')
-      {
-      steps { git url: 'https://github.com/JebaKishore18/Practice-Devops.git' }
-      }
-    stage ('Publish'){
-      steps {
-        publishHTML([
-          allowmissing:true,
-          alwaysLinktoLastBuild:false,
-          keepAll:false,
-          reportDir:'.',
-          reportFiles:'love.html' ,
-          reportName:'My html report' 
-        ])
-      }
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                // Use the 'git' step with a 'url' parameter
+                git url: 'https://github.com/JebaKishore18/Practice-Devops.git' 
+            }
+        }
+        stage('Publish') {
+            steps {
+                // 'publishHTML' step takes a 'target' nested object
+                publishHTML([
+                    target: [
+                        allowMissing: true,
+                        alwaysLinkToLastBuild: false,
+                        keepAll: false,
+                        reportDir: '.',
+                        reportFiles: 'love.html',
+                        reportName: 'My html report'
+                    ]
+                ])
+            }
+        }
     }
-  }
-
 }
