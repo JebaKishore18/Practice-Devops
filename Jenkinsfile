@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Use the 'git' step with a 'url' parameter
-                git url: 'https://github.com/JebaKishore18/Practice-Devops.git' 
+                git url: 'https://github.com/JebaKishore18/Practice-Devops.git' , branch: 'main'
             }
         }
         stage('Build Image'){
